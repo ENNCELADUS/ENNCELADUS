@@ -49,8 +49,6 @@ I'm an undergraduate student at ShanghaiTech University passionate about technol
 
 ## 🌱 I'm Currently Learning
 - Advanced machine learning algorithms and deep learning techniques
-- Natural language processing and computer vision
-- High-performance computing with C++ for AI applications
 - AI/ML systems design and deployment
 
 ## 📫 Let's Connect!
