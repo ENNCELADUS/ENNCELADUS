@@ -25,19 +25,12 @@ I'm an undergraduate student at ShanghaiTech University passionate about technol
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=ENNCELADUS&show_icons=true&theme=radical" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ENNCELADUS&theme=radical" alt="GitHub Streak" />
 </div>
 
 ## 📅 Contributions
 
 <div align="center">
-  
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ENNCELADUS/ENNCELADUS/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ENNCELADUS/ENNCELADUS/output/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/ENNCELADUS/ENNCELADUS/output/github-contribution-grid-snake.svg">
-  </picture>
-  
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/ENNCELADUS/ENNCELADUS/output/github-contribution-grid-snake.svg" width="100%" style="background-color: #0D1117;">
 </div>
 
 ## 🎯 Featured Projects
