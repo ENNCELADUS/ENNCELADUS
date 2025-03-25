@@ -28,7 +28,15 @@ I'm an undergraduate student at ShanghaiTech University passionate about technol
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=ENNCELADUS&theme=radical" alt="GitHub Streak" />
 </div>
 
-## 💼 Featured Projects
+## 📅 Contributions
+
+<div align="center">
+  
+  ![GitHub Contribution Graph](https://github-readme-activity-graph.vercel.app/graph?username=ENNCELADUS&theme=radical&bg_color=20232a&hide_border=true)
+  
+</div>
+
+## �� Featured Projects
 
 <div align="center">
   <a href="https://github.com/ENNCELADUS/ENNCELADUS.github.io">
