@@ -434,66 +434,11 @@
         <div class="container">
             <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--primary-color);">My GitHub Contributions</h2>
             <div style="max-width: 100%; overflow-x: auto; margin: 0 auto; text-align: center;">
-                <div style="display: grid; grid-template-columns: repeat(53, 15px); gap: 3px; justify-content: center; margin-bottom: 20px;">
-                    <!-- Generate contribution boxes programmatically -->
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            const contributionsContainer = document.querySelector('#contributions .container div div');
-                            const colors = ['#0e4429', '#006d32', '#26a641', '#39d353', '#ebedf0'];
-                            const numWeeks = 53;
-                            const daysPerWeek = 7;
-                            
-                            // Clear any existing content
-                            contributionsContainer.innerHTML = '';
-                            
-                            // Generate contribution grid
-                            for (let week = 0; week < numWeeks; week++) {
-                                for (let day = 0; day < daysPerWeek; day++) {
-                                    // Skip some days to create a more realistic pattern
-                                    const intensity = Math.random();
-                                    let colorIndex;
-                                    
-                                    if (intensity < 0.6) {
-                                        colorIndex = 0; // Empty or light
-                                    } else if (intensity < 0.75) {
-                                        colorIndex = 1; // Light contribution
-                                    } else if (intensity < 0.9) {
-                                        colorIndex = 2; // Medium contribution
-                                    } else {
-                                        colorIndex = 3; // Heavy contribution
-                                    }
-                                    
-                                    // Add some special highlighted boxes (magenta)
-                                    const isSpecial = Math.random() > 0.98;
-                                    const color = isSpecial ? '#e83e8c' : colors[colorIndex];
-                                    
-                                    const box = document.createElement('div');
-                                    box.style.width = '15px';
-                                    box.style.height = '15px';
-                                    box.style.backgroundColor = color;
-                                    box.style.borderRadius = '2px';
-                                    box.title = `${Math.floor(Math.random() * 10)} contributions`;
-                                    
-                                    contributionsContainer.appendChild(box);
-                                }
-                            }
-                        });
-                    </script>
-                </div>
-                <div style="text-align: center; color: #8b949e; font-size: 0.9rem; margin-top: 10px;">
-                    <span style="display: inline-block; margin: 0 10px;">
-                        <span style="display: inline-block; width: 10px; height: 10px; background-color: #0e4429; border-radius: 2px; margin-right: 5px;"></span> Less
-                    </span>
-                    <span style="display: inline-block; margin: 0 10px;">
-                        <span style="display: inline-block; width: 10px; height: 10px; background-color: #006d32; border-radius: 2px; margin-right: 5px;"></span>
-                    </span>
-                    <span style="display: inline-block; margin: 0 10px;">
-                        <span style="display: inline-block; width: 10px; height: 10px; background-color: #26a641; border-radius: 2px; margin-right: 5px;"></span>
-                    </span>
-                    <span style="display: inline-block; margin: 0 10px;">
-                        <span style="display: inline-block; width: 10px; height: 10px; background-color: #39d353; border-radius: 2px; margin-right: 5px;"></span> More
-                    </span>
-                </div>
+                <!-- Replace the programmatically generated fake contribution graph with real GitHub contributions -->
+                <img src="https://github-readme-streak-stats.herokuapp.com/?user=ENNCELADUS&theme=radical" alt="GitHub Streak Stats" style="max-width: 100%; margin-bottom: 20px;">
+                
+                <!-- Add actual GitHub activity graph -->
+                <img src="https://github-readme-activity-graph.vercel.app/graph?username=ENNCELADUS&theme=radical&bg_color=20232a&hide_border=true" alt="GitHub Activity Graph" style="max-width: 100%;">
             </div>
         </div>
     </section>
