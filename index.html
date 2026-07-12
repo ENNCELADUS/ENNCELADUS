@@ -156,6 +156,14 @@
         .skills > div { flex-direction:column; gap:2px; }
         .skills dt { flex-basis:auto; }
       }
+
+      .reveal { opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
+      .reveal.visible { opacity:1; transform:none; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior:auto; }
+        .reveal { opacity:1; transform:none; transition:none; }
+      }
+      .hero-links a, .nav-links a, .footer a { transition:color .2s ease; }
     </style>
 </head>
 <body>
@@ -292,6 +300,22 @@
           try { localStorage.setItem('theme', next); } catch (e) {}
           sync();
         });
+      })();
+    </script>
+    <script>
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window) ||
+            matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          els.forEach(function (el) { el.classList.add('visible'); });
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        els.forEach(function (el) { io.observe(el); });
       })();
     </script>
 </body>
