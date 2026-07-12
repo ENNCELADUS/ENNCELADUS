@@ -47,6 +47,8 @@ modern portfolio technique), adapted to a light palette.
 | Email | **Placeholder** (`[you@example.com]`), clearly marked |
 | Affiliation | **Placeholder** (`[Your University]`), clearly marked |
 | C++/Java skills | **Dropped** — not in CV; use real CV skills |
+| Extra links (Scholar/LinkedIn) | **Excluded** — GitHub is the only live link |
+| `README.md` (GitHub profile) sync | **In scope** — bring it in line with the new page |
 | Architecture | Single static `index.html`, GitHub Pages, self-contained |
 
 ## Page structure
@@ -56,11 +58,11 @@ Sticky, glassy nav (`backdrop-filter`) with brand monogram + links
 
 1. **Header** — photo (GitHub avatar), name "Anrui Wang", identity line
    "CS undergraduate · AI for Science", affiliation placeholder, compact link row.
-   **Link policy (zero dead links on the live page):** GitHub is the only live
-   link. Email, CV PDF, Google Scholar, and LinkedIn are rendered as clearly-marked
-   placeholders that do **not** navigate — implemented either as commented-out
-   markup the user uncomments, or as visible `[add …]` text — never as `href="#"`
-   or a broken URL.
+   **Links (per review): Email (placeholder) · CV PDF (placeholder) · GitHub
+   (live) only.** Google Scholar and LinkedIn are **excluded**. **Zero dead links
+   on the live page:** GitHub is the only live link; Email and CV are clearly-marked
+   placeholders that do **not** navigate anywhere broken (visible `[add …]` text,
+   or a `mailto:`/`cv.pdf` the user fills in) — never `href="#"` or a broken URL.
 2. **01 / About** — 2–4 sentence bio (draft below).
 3. **02 / News** — reverse-chronological; two real research start dates.
 4. **03 / Research** (centerpiece) — two real projects as *publication-style*
@@ -144,10 +146,23 @@ Research carries that weight.
 - No blog, no publications section (nothing to list yet).
 - No heavy animation / 3D / cursor gimmicks.
 
-## Optional follow-up (confirm during review)
+## `README.md` sync (in scope)
 
-- **Sync `README.md`** (GitHub profile) to match: fix wrong skills, malformed
-  avatar, `contact@example.com`, `© 2023`. Out of primary scope unless requested.
+Bring the GitHub profile `README.md` in line with the new page and real CV:
+- Replace the wrong tech stack (Python/PyTorch/JS/etc. shields) with the real
+  focus — **AI for Science**, single-cell & graph representation learning; skills
+  from the CV.
+- Fix the malformed avatar reference; drop `contact@example.com`; drop the dead
+  "Featured Projects" placeholders in favor of the two real research directions.
+- Update `© 2023` → current; keep it tasteful and consistent with the homepage's
+  positioning (README can stay badge-friendly, just accurate).
+- Keep the GitHub-stats/typing-SVG widgets only if they still render; remove the
+  contribution "snake" reference to match the homepage decision.
+
+## Deliverables
+
+1. Rewritten `index.html` (primary).
+2. Synced `README.md`.
 
 ## Success criteria
 
@@ -156,3 +171,4 @@ Research carries that weight.
 - Reads as an official AI-for-Science researcher page; passes a quick
   "does this look credible for grad-school admissions" gut check.
 - Light/dark both look intentional; Lighthouse-ish: fast, accessible, responsive.
+- `README.md` no longer contradicts the homepage (skills, contact, year, avatar).
