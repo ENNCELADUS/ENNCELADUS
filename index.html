@@ -112,6 +112,29 @@
         .hero-text h1 { font-size:2.1rem; }
         .news-list li { flex-direction:column; gap:2px; }
       }
+
+      /* Research */
+      .pub { display:flex; gap:22px; padding:22px 0; border-top:1px solid var(--border); }
+      .pub:first-of-type { border-top:none; }
+      .pub-thumb {
+        flex:0 0 140px; height:96px; border-radius:10px; border:1px solid var(--border);
+      }
+      .thumb-a { background:linear-gradient(135deg,#2563eb22,#7c3aed22); }
+      .thumb-b { background:linear-gradient(135deg,#0891b222,#2563eb22); }
+      [data-theme="dark"] .thumb-a { background:linear-gradient(135deg,#60a5fa2e,#a78bfa2e); }
+      [data-theme="dark"] .thumb-b { background:linear-gradient(135deg,#22d3ee2e,#60a5fa2e); }
+      .pub-title { font-size:1.18rem; }
+      .pub-meta { font-family:var(--mono); font-size:.82rem; color:var(--muted); margin:5px 0 10px; }
+      .pub-desc { font-size:.98rem; color:var(--text); }
+      .pub-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+      .pub-tags span {
+        font-family:var(--mono); font-size:.72rem; color:var(--muted);
+        border:1px solid var(--border); border-radius:999px; padding:3px 10px;
+      }
+      @media (max-width:600px) {
+        .pub { flex-direction:column; gap:14px; }
+        .pub-thumb { flex-basis:auto; width:100%; height:80px; }
+      }
     </style>
 </head>
 <body>
@@ -164,6 +187,36 @@
             <li><span class="news-date">Jan 2026</span><span>Began research with Prof. Xuming He on topology-constrained deep learning for inductive interactome reconstruction.</span></li>
             <li><span class="news-date">Nov 2025</span><span>Started research with Prof. Jie Zheng on multi-omics modeling for synthetic-lethality prediction.</span></li>
           </ul>
+        </div>
+      </section>
+
+      <section id="research" class="reveal">
+        <div class="container">
+          <span class="section-label">03 / Research</span>
+
+          <article class="pub">
+            <div class="pub-thumb thumb-a" aria-hidden="true"></div>
+            <div class="pub-body">
+              <h3 class="pub-title">Synthetic-Lethality Prediction via STATE-Based Multi-Omics Modeling</h3>
+              <p class="pub-meta">Supervised by Prof. Jie Zheng · Nov 2025 – present</p>
+              <p class="pub-desc">Predicting synthetic-lethal gene pairs for cancer-selective drug-target prioritization by integrating Perturb-seq perturbation transcriptomics, DepMap functional dependency (CRISPR GeneEffect), and ESM2 protein-sequence embeddings. Models perturbation responses as cell-state representations via a prototype-based distribution-regression approach that recovers dependency signal missed by pseudobulk and attention baselines.</p>
+              <div class="pub-tags">
+                <span>Perturb-seq</span><span>DepMap</span><span>scVI</span><span>ESM2</span><span>distribution regression</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-thumb thumb-b" aria-hidden="true"></div>
+            <div class="pub-body">
+              <h3 class="pub-title">Topology-Constrained Inductive Interactome Reconstruction</h3>
+              <p class="pub-meta">Supervised by Prof. Xuming He · Jan 2026 – present</p>
+              <p class="pub-desc">Reframes protein–protein interaction prediction from independent pairwise classification into inductive reconstruction of the full interaction network, using a topology-constrained conditional generator (pairwise compatibility, hub propensity, community membership, set-level density) distilled from a masked-edge topology teacher while staying strictly inductive on intrinsic ESM protein features.</p>
+              <div class="pub-tags">
+                <span>GNN</span><span>graph generation</span><span>topology</span><span>ESM</span>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </main>
