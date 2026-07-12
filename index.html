@@ -84,6 +84,34 @@
         .nav-links { gap:14px; }
         .nav-links a:not(.nav-cv) { display:none; }  /* keep it clean on mobile; CV+toggle stay */
       }
+
+      /* Hero / About / News */
+      .hero { padding:72px 0 40px; position:relative; z-index:2; }
+      .hero-inner { display:flex; gap:32px; align-items:center; }
+      .avatar {
+        border-radius:50%; object-fit:cover; flex-shrink:0;
+        border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.08);
+      }
+      .hero-text h1 { font-size:2.6rem; letter-spacing:-.02em; }
+      .hero-tagline { font-size:1.15rem; color:var(--text); margin-top:6px; }
+      .hero-affil { color:var(--muted); margin-top:2px; }
+      .hero-links { display:flex; flex-wrap:wrap; gap:18px; margin-top:16px; font-size:.95rem; }
+      .hero-links a, .placeholder-link { display:inline-flex; align-items:center; gap:7px; }
+      .placeholder-link { color:var(--muted); font-style:italic; }
+      .prose { color:var(--text); font-size:1.05rem; }
+      .prose em { font-style:italic; color:var(--accent); }
+      .news-list { display:flex; flex-direction:column; gap:12px; }
+      .news-list li { display:flex; gap:16px; align-items:baseline; }
+      .news-date {
+        font-family:var(--mono); font-size:.82rem; color:var(--muted);
+        flex:0 0 74px; white-space:nowrap;
+      }
+      @media (max-width:600px) {
+        .hero-inner { flex-direction:column; text-align:center; gap:20px; }
+        .hero-links { justify-content:center; }
+        .hero-text h1 { font-size:2.1rem; }
+        .news-list li { flex-direction:column; gap:2px; }
+      }
     </style>
 </head>
 <body>
@@ -106,7 +134,38 @@
     </nav>
 
     <main id="top">
-      <!-- Header, About, News, Research, Skills, Coursework, Contact added in later tasks -->
+      <header class="hero">
+        <div class="container hero-inner">
+          <img class="avatar" src="https://github.com/ENNCELADUS.png" alt="Anrui Wang" width="132" height="132" loading="eager">
+          <div class="hero-text">
+            <h1>Anrui Wang</h1>
+            <p class="hero-tagline">CS undergraduate &middot; AI for Science</p>
+            <p class="hero-affil">[Your University]</p>
+            <div class="hero-links">
+              <span class="placeholder-link"><i class="fa-regular fa-envelope"></i> [you@example.com]</span>
+              <a href="cv/cv.pdf"><i class="fa-regular fa-file-lines"></i> CV</a>
+              <a href="https://github.com/ENNCELADUS"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="about" class="reveal">
+        <div class="container">
+          <span class="section-label">01 / About</span>
+          <p class="prose">I'm an undergraduate computer science student working at the intersection of machine learning and biology — <em>AI for Science</em>. My research centers on representation learning for single-cell genomics and graph-structured biological data: models that read perturbation and dependency signals to predict synthetic-lethal gene pairs, and that reconstruct protein–protein interaction networks under topological constraints. I'm broadly interested in single-cell and graph representation learning, and I'm looking for research opportunities and collaborations in these areas.</p>
+        </div>
+      </section>
+
+      <section id="news" class="reveal">
+        <div class="container">
+          <span class="section-label">02 / News</span>
+          <ul class="news-list">
+            <li><span class="news-date">Jan 2026</span><span>Began research with Prof. Xuming He on topology-constrained deep learning for inductive interactome reconstruction.</span></li>
+            <li><span class="news-date">Nov 2025</span><span>Started research with Prof. Jie Zheng on multi-omics modeling for synthetic-lethality prediction.</span></li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <script>
