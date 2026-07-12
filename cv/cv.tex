@@ -1,0 +1,75 @@
+% Document class and font size
+\documentclass[a4paper,9pt]{extarticle}
+
+% Packages
+\usepackage[utf8]{inputenc} % For input encoding
+\usepackage{geometry} % For page margins
+\geometry{letterpaper, margin=0.75in} % Set paper size and margins
+\usepackage{titlesec} % For section title formatting
+\usepackage{enumitem} % For itemized list formatting
+\usepackage{hyperref} % For hyperlinks
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+
+% Formatting
+\setlist{noitemsep} % Removes item separation
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule] % Section title format
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip} % Section title spacing
+
+% Begin document
+\begin{document}
+
+% Disable page numbers
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[L]{\textit{Anrui Wang}}
+\fancyhead[R]{\textit{\# Month \#Year}}
+\thispagestyle{empty} % Remove header from the first page
+
+% Header
+\begin{flushleft}
+\textbf{\LARGE Anrui Wang}\\[2pt] % Name
+CS student
+\end{flushleft}
+
+% PLACEHOLDER-APPEND-MARKER
+
+\section*{RESEARCH INTERESTS}
+\noindent
+AI for Science, Single-cell Representation Learning, Graph Representation Learning
+
+\section*{RESEARCH EXPERIENCE}
+\noindent
+\textbf{STATE-Based Multi-Omics Modeling for Synthetic-Lethality Prediction} \\
+\textit{Supervised by Prof. Jie Zheng} \hfill Nov. 2025 -- Present
+\begin{itemize}
+    \item Framed and independently led a staged research program toward synthetic-lethal (SL) target discovery, predicting gene-pair SL interactions for cancer-selective drug-target prioritization.
+    \item Integrated multi-omics evidence into SL pair prediction: Perturb-seq perturbation transcriptomics, DepMap functional dependency (CRISPR GeneEffect), together with ESM2 protein-sequence embeddings.
+    \item Modeled perturbation responses as cell-state representations predictive of cancer dependency, developing from variational single-cell representations (scVI) and multiple-instance pooling to a prototype-based distribution-regression model that recovers dependency signal missed by pseudobulk and attention baselines.
+    \item Built cross-cell-line selectivity features for context-specific dependency, and evaluated SL prediction on a gene-pair benchmark with adversarial leakage.
+\end{itemize}
+
+\noindent
+\textbf{Topology-Constrained Deep Learning for Inductive Interactome Reconstruction} \\
+\textit{Supervised by Prof. Xuming He} \hfill Jan. 2026 -- Present
+\begin{itemize}
+    \item Reframed protein--protein interaction prediction from independent pairwise classification into inductive reconstruction of the interaction network.
+    \item Designed a topology-constrained conditional generator modeling the full adjacency structure of an unseen protein set via a decomposed edge formulation (pairwise compatibility, hub propensity, community membership, set-level density).
+    \item Instilled topological realism with a training-only topology teacher (masked-edge reconstruction distillation) and differentiable graph-level objectives, while keeping the deployed model strictly inductive on intrinsic protein features (ESM).
+    \item Established credible baselines through systematic architecture ablations, and reproduction of SOTA models.
+\end{itemize}
+
+\section*{SKILLS}
+\begin{itemize}
+    \item \textbf{Programming:} Python, PyTorch
+    \item \textbf{ML / Tooling:} HuggingFace Accelerate, single-cell foundation models, ESM series, graph neural networks
+    \item \textbf{Coding Agents:} highly skilled with agentic coding tools, including Claude Code and Codex
+    \item \textbf{Domains:} single-cell genomics, cancer dependency (DepMap), synthetic lethality, protein--protein interaction networks
+\end{itemize}
+
+\section*{SELECTED COURSES}
+\noindent
+Machine Learning, Deep Learning, AI for Science and Engineering, Bioinformatics
+
+\end{document}
