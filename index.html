@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anrui Wang</title>
-    <meta name="description" content="Anrui Wang — CS undergraduate working on AI for Science: single-cell and graph representation learning.">
-    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+    <meta name="description" content="Anrui Wang — ShanghaiTech CS undergraduate researching AI for Science, protein interactions, virtual cell models, and synthetic lethality.">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#161b22" media="(prefers-color-scheme: dark)">
     <!-- Set theme before paint to avoid flash -->
     <script>
       (function () {
@@ -17,169 +17,113 @@
         } catch (e) {}
       })();
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
       :root {
-        --bg:#fafafa; --surface:#ffffff; --text:#1a1a1a; --muted:#6b7280;
-        --border:#e5e7eb; --accent:#2563eb; --accent-hover:#1d4ed8;
-        --maxw:760px;
-        --sans:'Inter',system-ui,-apple-system,sans-serif;
-        --display:'Space Grotesk',var(--sans);
-        --mono:'JetBrains Mono',ui-monospace,monospace;
+        --bg:#ffffff; --surface:#f6f8fa; --text:#252a30; --muted:#59636e;
+        --border:#e1e5e9; --accent:#17649b; --accent-hover:#10476f;
+        --maxw:1200px;
+        --sans:Arial, Helvetica, sans-serif;
       }
       [data-theme="dark"] {
-        --bg:#0d1117; --surface:#161b22; --text:#e6edf3; --muted:#8b949e;
-        --border:#30363d; --accent:#60a5fa; --accent-hover:#93c5fd;
+        --bg:#161b22; --surface:#202731; --text:#e6edf3; --muted:#abb6c2;
+        --border:#38424e; --accent:#87bfe8; --accent-hover:#b4daf5;
       }
       * { margin:0; padding:0; box-sizing:border-box; }
-      html { scroll-behavior:smooth; }
+      html { scroll-behavior:smooth; scroll-padding-top:112px; }
       body {
-        font-family:var(--sans); font-size:17px; line-height:1.65;
+        font-family:var(--sans); font-size:16px; line-height:1.65;
         color:var(--text); background:var(--bg);
-        -webkit-font-smoothing:antialiased; overflow-x:hidden;
-        transition:background .3s ease, color .3s ease;
+        -webkit-font-smoothing:antialiased;
       }
       a { color:var(--accent); text-decoration:none; }
-      a:hover { color:var(--accent-hover); }
-      h1,h2,h3 { font-family:var(--display); line-height:1.2; font-weight:700; }
-      .container { max-width:var(--maxw); margin:0 auto; padding:0 24px; }
-      section { padding:56px 0; }
+      a:hover { color:var(--accent-hover); text-decoration:underline; }
+      h1,h2,h3 { line-height:1.3; }
+      .container { max-width:var(--maxw); margin:0 auto; padding:0 32px; }
+      section { padding:26px 0; }
       .section-label {
-        font-family:var(--mono); font-size:.8rem; font-weight:500;
-        color:var(--accent); letter-spacing:.02em; margin-bottom:20px;
-        display:block; text-transform:uppercase;
+        font-size:1.5rem; font-weight:600; color:var(--text);
+        padding-bottom:10px; margin-bottom:8px; border-bottom:1px solid var(--border);
       }
-      :focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:3px; }
+      :focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
 
-      /* Grain overlay */
-      .grain {
-        position:fixed; inset:0; pointer-events:none; z-index:1; opacity:.035;
-        background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      }
-
-      /* Nav */
-      .nav {
-        position:sticky; top:0; z-index:10;
-        backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-        background:color-mix(in srgb, var(--bg) 78%, transparent);
-        border-bottom:1px solid var(--border);
-      }
+      /* A shared masthead and content width keep navigation aligned. */
+      .nav { position:sticky; top:0; z-index:10; background:var(--bg); border-bottom:1px solid var(--border); }
       .nav-inner {
-        max-width:var(--maxw); margin:0 auto; padding:12px 24px;
-        display:flex; align-items:center; justify-content:space-between;
+        max-width:var(--maxw); margin:0 auto; padding:18px 32px;
+        display:flex; align-items:center; justify-content:space-between; gap:24px;
       }
-      .nav-brand { font-family:var(--display); font-weight:700; color:var(--text); font-size:1.05rem; }
-      .nav-links { display:flex; gap:22px; align-items:center; }
-      .nav-links a { color:var(--muted); font-size:.92rem; font-weight:500; }
-      .nav-links a:hover { color:var(--text); }
+      .nav-brand { font-weight:700; color:var(--text); font-size:1.15rem; white-space:nowrap; }
+      .nav-links { display:flex; flex-wrap:wrap; gap:8px 24px; align-items:center; }
+      .nav-links a { color:var(--muted); font-size:.95rem; padding:5px 0; }
+      .nav-links a:hover { color:var(--accent); }
       .theme-toggle {
-        background:none; border:1px solid var(--border); color:var(--text);
-        width:34px; height:34px; border-radius:8px; cursor:pointer;
-        display:inline-flex; align-items:center; justify-content:center;
-        transition:border-color .2s ease, color .2s ease;
+        background:var(--surface); border:1px solid var(--border); color:var(--text);
+        width:36px; height:36px; border-radius:4px; cursor:pointer;
+        display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
       }
-      .theme-toggle:hover { border-color:var(--accent); color:var(--accent); }
-      @media (max-width:600px) {
-        .nav-links { gap:14px; }
-        .nav-links a:not(.nav-cv) { display:none; }  /* keep it clean on mobile; CV+toggle stay */
-      }
+      .theme-toggle:hover { border-color:var(--accent); }
 
-      /* Hero / About / News */
-      .hero { padding:72px 0 40px; position:relative; z-index:2; }
-      .hero-inner { display:flex; gap:32px; align-items:center; }
-      .avatar {
-        border-radius:50%; object-fit:cover; flex-shrink:0;
-        border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,.08);
-      }
-      .hero-text h1 { font-size:2.6rem; letter-spacing:-.02em; }
-      .hero-tagline { font-size:1.15rem; color:var(--text); margin-top:6px; }
+      .hero { padding:56px 0 26px; }
+      .hero-inner { display:flex; gap:48px; align-items:center; }
+      .hero-text { flex:1; min-width:0; }
+      .hero-text h1 { font-size:2.25rem; font-weight:500; margin-bottom:10px; }
+      .hero-tagline { font-size:1rem; }
       .hero-affil { color:var(--muted); margin-top:2px; }
-      .hero-links { display:flex; flex-wrap:wrap; gap:18px; margin-top:16px; font-size:.95rem; }
-      .hero-links a, .placeholder-link { display:inline-flex; align-items:center; gap:7px; }
-      .placeholder-link { color:var(--muted); font-style:italic; }
-      .prose { color:var(--text); font-size:1.05rem; }
-      .prose em { font-style:italic; color:var(--accent); }
-      .news-list { display:flex; flex-direction:column; gap:12px; }
-      .news-list li { display:flex; gap:16px; align-items:baseline; }
-      .news-date {
-        font-family:var(--mono); font-size:.82rem; color:var(--muted);
-        flex:0 0 74px; white-space:nowrap;
-      }
-      @media (max-width:600px) {
-        .hero-inner { flex-direction:column; text-align:center; gap:20px; }
-        .hero-links { justify-content:center; }
-        .hero-text h1 { font-size:2.1rem; }
-        .news-list li { flex-direction:column; gap:2px; }
-      }
+      .hero-text .prose { margin-top:18px; }
+      .avatar { width:168px; height:168px; border-radius:50%; object-fit:cover; flex-shrink:0; }
+      .hero-links { display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:18px; font-size:.94rem; }
+      .hero-links a { display:inline-flex; align-items:center; gap:7px; overflow-wrap:anywhere; }
+      .prose { font-size:1rem; }
 
-      /* Research */
-      .pub { display:flex; gap:22px; padding:22px 0; border-top:1px solid var(--border); }
-      .pub:first-of-type { border-top:none; }
-      .pub-thumb {
-        flex:0 0 140px; height:96px; border-radius:10px; border:1px solid var(--border);
-      }
-      .thumb-a { background:linear-gradient(135deg,#2563eb22,#7c3aed22); }
-      .thumb-b { background:linear-gradient(135deg,#0891b222,#2563eb22); }
-      [data-theme="dark"] .thumb-a { background:linear-gradient(135deg,#60a5fa2e,#a78bfa2e); }
-      [data-theme="dark"] .thumb-b { background:linear-gradient(135deg,#22d3ee2e,#60a5fa2e); }
-      .pub-title { font-size:1.18rem; }
-      .pub-meta { font-family:var(--mono); font-size:.82rem; color:var(--muted); margin:5px 0 10px; }
-      .pub-desc { font-size:.98rem; color:var(--text); }
-      .pub-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
-      .pub-tags span {
-        font-family:var(--mono); font-size:.72rem; color:var(--muted);
-        border:1px solid var(--border); border-radius:999px; padding:3px 10px;
-      }
-      @media (max-width:600px) {
-        .pub { flex-direction:column; gap:14px; }
-        .pub-thumb { flex-basis:auto; width:100%; height:80px; }
-      }
+      .pub { display:flex; gap:32px; padding:24px 0; }
+      .pub + .pub { border-top:1px solid var(--border); }
+      .pub-thumb { display:block; flex:0 0 360px; align-self:flex-start; background:#fff; }
+      .pub-thumb img { display:block; width:100%; height:auto; }
+      .pub-body { min-width:0; }
+      .pub-title { font-size:1.06rem; font-weight:600; }
+      .pub-meta { font-size:.88rem; color:var(--muted); margin:7px 0 10px; }
+      .pub-desc { font-size:.95rem; }
+      .pub-desc li { margin-left:1.15em; }
+      .pub-desc li + li { margin-top:7px; }
 
-      /* Skills, Coursework, Contact, Footer */
-      .skills { display:flex; flex-direction:column; gap:14px; }
-      .skills > div { display:flex; gap:18px; align-items:baseline; }
-      .skills dt {
-        font-family:var(--mono); font-size:.82rem; color:var(--accent);
-        flex:0 0 130px; font-weight:500;
-      }
-      .skills dd { color:var(--text); font-size:.98rem; }
-      .footer {
-        border-top:1px solid var(--border); padding:28px 0; margin-top:24px;
-        position:relative; z-index:2;
-      }
+      .footer { background:var(--surface); border-top:1px solid var(--border); padding:24px 0; margin-top:32px; }
       .footer .container { display:flex; justify-content:space-between; align-items:center; }
-      .footer span { color:var(--muted); font-size:.9rem; }
-      .footer a { color:var(--muted); font-size:1.2rem; }
-      .footer a:hover { color:var(--accent); }
-      @media (max-width:600px) {
-        .skills > div { flex-direction:column; gap:2px; }
-        .skills dt { flex-basis:auto; }
+      .footer span { color:var(--muted); font-size:.85rem; }
+      .footer a { font-size:1.15rem; }
+      @media (max-width:800px) {
+        html { scroll-padding-top:24px; }
+        .nav { position:static; }
+        .nav-inner { flex-wrap:wrap; gap:8px; padding-top:12px; padding-bottom:12px; }
+        .nav-links { width:100%; gap:6px 20px; }
+        .hero-inner { gap:28px; }
+        .avatar { width:132px; height:132px; }
+        .pub { flex-direction:column; gap:18px; }
+        .pub-thumb { flex-basis:auto; width:100%; max-width:480px; }
       }
-
-      .reveal { opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
-      .reveal.visible { opacity:1; transform:none; }
-      @media (prefers-reduced-motion: reduce) {
-        html { scroll-behavior:auto; }
-        .reveal { opacity:1; transform:none; transition:none; }
+      @media (max-width:520px) {
+        .container, .nav-inner { padding-left:20px; padding-right:20px; }
+        .nav-links { gap:4px 16px; }
+        .nav-links a { font-size:.85rem; }
+        .hero { padding-top:32px; }
+        .hero-inner { flex-direction:column-reverse; align-items:flex-start; gap:20px; }
+        .hero-text h1 { font-size:2rem; }
+        .hero-links { gap:8px 16px; }
+        section { padding:22px 0; }
       }
-      .hero-links a, .nav-links a, .footer a { transition:color .2s ease; }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
     </style>
-    <noscript><style>.reveal{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body>
-    <div class="grain" aria-hidden="true"></div>
-
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
       <div class="nav-inner">
         <a class="nav-brand" href="#top">Anrui Wang</a>
         <div class="nav-links">
           <a href="#about">About</a>
           <a href="#research">Research</a>
-          <a href="#skills">Skills</a>
-          <a class="nav-cv" href="cv/cv.pdf">CV</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="cv/cv.pdf">CV</a>
           <a href="#contact">Contact</a>
           <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
             <i class="fa-solid fa-moon" aria-hidden="true"></i>
@@ -189,92 +133,170 @@
     </nav>
 
     <main id="top">
-      <header class="hero">
+      <header id="about" class="hero">
         <div class="container hero-inner">
-          <img class="avatar" src="https://github.com/ENNCELADUS.png" alt="Anrui Wang" width="132" height="132" loading="eager">
           <div class="hero-text">
             <h1>Anrui Wang</h1>
-            <p class="hero-tagline">CS undergraduate &middot; AI for Science</p>
-            <p class="hero-affil">[ShanghaiTech University]</p>
+            <p class="hero-tagline">B.S. in Computer Science and Technology (AI Honors Program)</p>
+            <p class="hero-affil">ShanghaiTech University</p>
+            <p class="prose">I study Computer Science and Technology in the AI Honors Program at ShanghaiTech University. My research interests include machine learning algorithms, AI agents, and their applications in biology, especially protein–protein interactions and synthetic lethality. I have one first-author paper under review at ICLR 2027 and one co-authored paper under review at Nature Biotechnology. I am also preparing manuscripts for ICML 2027 and ISMB 2027.</p>
             <div class="hero-links">
-              <span class="placeholder-link"><i class="fa-regular fa-envelope" aria-hidden="true"></i> [arwang@shanghaitech.edu.cn]</span>
+              <a href="mailto:arwang@shanghaitech.edu.cn"><i class="fa-regular fa-envelope" aria-hidden="true"></i> arwang@shanghaitech.edu.cn</a>
               <a href="cv/cv.pdf"><i class="fa-regular fa-file-lines" aria-hidden="true"></i> CV</a>
               <a href="https://github.com/ENNCELADUS"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
             </div>
           </div>
+          <img class="avatar" src="https://github.com/ENNCELADUS.png" alt="Anrui Wang" width="132" height="132" loading="eager">
         </div>
       </header>
 
-      <section id="about" class="reveal">
+      <section id="education">
         <div class="container">
-          <h2 class="section-label">01 / About</h2>
-          <p class="prose">I'm an undergraduate computer science student working at the intersection of machine learning and biology — <em>AI for Science</em>. I'm drawn to problems where learning the right representation of noisy, high-dimensional biological data turns into predictions you can actually trust. My current projects live in single-cell genomics and molecular networks, but my interests run broadly across machine learning for the life sciences, and I'm looking for research opportunities and collaborations.</p>
+          <h2 class="section-label">Education</h2>
+          <h3 class="pub-title">ShanghaiTech University · Shanghai, China</h3>
+          <p class="pub-meta">Sep 2023 – Jul 2027 (expected)</p>
+          <p class="prose">B.S. in Computer Science and Technology (AI Honors Program)</p>
         </div>
       </section>
 
-      <section id="news" class="reveal">
+      <section id="research">
         <div class="container">
-          <h2 class="section-label">02 / News</h2>
-          <ul class="news-list">
-            <li><span class="news-date">Jan 2026</span><span>Began research with Prof. Xuming He on topology-constrained deep learning for inductive interactome reconstruction.</span></li>
-            <li><span class="news-date">Nov 2025</span><span>Started research with Prof. Jie Zheng on multi-omics modeling for synthetic-lethality prediction.</span></li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="research" class="reveal">
-        <div class="container">
-          <h2 class="section-label">03 / Research</h2>
-
+          <h2 class="section-label">Research</h2>
           <article class="pub">
-            <div class="pub-thumb thumb-a" aria-hidden="true"></div>
+            <a class="pub-thumb" href="assets/research/grasp-pi.png" aria-label="Open the GraSPPI schematic at full size">
+              <img src="assets/research/grasp-pi.png" alt="GraSPPI: unseen protein features form a motif graph prompt, with structural regularization to preserve PPI network topology." width="1448" height="1086" loading="lazy">
+            </a>
             <div class="pub-body">
-              <h3 class="pub-title">Synthetic-Lethality Prediction via STATE-Based Multi-Omics Modeling</h3>
-              <p class="pub-meta">Supervised by Prof. Jie Zheng · Nov 2025 – present</p>
-              <p class="pub-desc">Predicting synthetic-lethal gene pairs for cancer-selective drug-target prioritization by integrating Perturb-seq perturbation transcriptomics, DepMap functional dependency (CRISPR GeneEffect), and ESM2 protein-sequence embeddings. Models perturbation responses as cell-state representations via a prototype-based distribution-regression approach that recovers dependency signal missed by pseudobulk and attention baselines.</p>
-              <div class="pub-tags">
-                <span>Perturb-seq</span><span>DepMap</span><span>scVI</span><span>ESM2</span><span>distribution regression</span>
-              </div>
+              <h3 class="pub-title">Deep Learning Framework for Inductive Protein–Protein Interaction (PPI) Prediction</h3>
+              <p class="pub-meta">Advisors: Prof. Xuming He (SIST, ShanghaiTech) · Dec 2025 – Sep 2026</p>
+              <ul class="pub-desc">
+                <li>To address the challenges of topological distortion in predicted PPI networks and the lack of network context for unseen proteins, we proposed GraSPPI, a motif graph prompt tuning framework for inductive PPI prediction.</li>
+                <li>At the pair level, we designed a motif template based on triadic closure that infers each pair&#x27;s shared interaction partners from proteins&#x27; intrinsic features and uses them as a prompt for the interaction decision.</li>
+                <li>At the network level, we introduced structural losses that regularize the predictions on sampled training subgraphs jointly, so that the predicted network keeps the structure of the true network.</li>
+                <li>Extensive experiments demonstrate that GraSPPI effectively preserves the topology of held-out PPI networks. It had the best average rank across multiple metrics among the compared methods.</li>
+              </ul>
             </div>
           </article>
 
           <article class="pub">
-            <div class="pub-thumb thumb-b" aria-hidden="true"></div>
+            <a class="pub-thumb" href="assets/research/synthetic-lethality.png" aria-label="Open the synthetic lethality schematic at full size">
+              <img src="assets/research/synthetic-lethality.png" alt="Cancer cell multi-omics feed a Virtual Cell model to predict gene essentiality and context-specific candidate synthetic-lethal pairs." width="1448" height="1086" loading="lazy">
+            </a>
             <div class="pub-body">
-              <h3 class="pub-title">Topology-Constrained Inductive Interactome Reconstruction</h3>
-              <p class="pub-meta">Supervised by Prof. Xuming He · Jan 2026 – present</p>
-              <p class="pub-desc">Reframes protein–protein interaction prediction from independent pairwise classification into inductive reconstruction of the full interaction network, using a topology-constrained conditional generator (pairwise compatibility, hub propensity, community membership, set-level density) distilled from a masked-edge topology teacher while staying strictly inductive on intrinsic ESM protein features.</p>
-              <div class="pub-tags">
-                <span>GNN</span><span>graph generation</span><span>topology</span><span>ESM</span>
-              </div>
+              <h3 class="pub-title">Context-Specific Synthetic-Lethality (SL) Prediction with Pretrained Virtual Cell Foundation Models</h3>
+              <p class="pub-meta">Advisors: Prof. Jie Zheng (SIST, ShanghaiTech) and Prof. Lichun Jiang (SIAIS, ShanghaiTech) · Nov 2025 – present</p>
+              <ul class="pub-desc">
+                <li>Develop a deep learning framework based on pretrained AI Virtual Cell foundation models to predict how gene essentiality varies across different cancer cell lines, using multi-omics data.</li>
+                <li>Extend the framework toward synthetic lethality (SL) discovery by using the predicted essentiality representations to predict context specific SL partners in held-out cell lines.</li>
+                <li>Build a cell-line-specific SL prediction benchmark from multiple SL screening studies across diverse cell lines, and evaluate the model against multiple baselines and prior methods.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="pub">
+            <a class="pub-thumb" href="assets/research/membrane-ppi.png" aria-label="Open the membrane PPI schematic at full size">
+              <img src="assets/research/membrane-ppi.png" alt="A membrane PPI predictor and scientific agent use wet-lab feedback to improve the model and guide the next experiments." width="1448" height="1086" loading="lazy">
+            </a>
+            <div class="pub-body">
+              <h3 class="pub-title">Deep Learning and Scientific Agent Framework for Membrane PPI Prediction</h3>
+              <p class="pub-meta">Advisors: Prof. Xuming He (SIST, ShanghaiTech) and Prof. Wenqing Shui (iHuman Institute, ShanghaiTech) · Jun 2025 – present</p>
+              <ul class="pub-desc">
+                <li>Developed a deep learning model for endogenous transmembrane PPI prediction, including training algorithm design, model architecture optimization, and performance benchmarking.</li>
+                <li>Developed an interactive research website to present our work and enable exploration of the tissue-wide transmembrane PPI network discovered through the study.</li>
+                <li>Working on a combined wet-lab and dry-model development loop for membrane PPI prediction: the feedback from a small number of expensive wet-lab experiments lets an LLM scientific agent recursively improve its own workflow and the DL predictor, and the improved agent also guides the next wet-lab experiments.</li>
+              </ul>
             </div>
           </article>
         </div>
       </section>
 
-      <section id="skills" class="reveal">
+      <section id="publications">
         <div class="container">
-          <h2 class="section-label">04 / Skills</h2>
-          <dl class="skills">
-            <div><dt>Programming</dt><dd>Python, PyTorch</dd></div>
-            <div><dt>ML / Tooling</dt><dd>HuggingFace Accelerate, single-cell foundation models, ESM series, graph neural networks</dd></div>
-            <div><dt>Coding Agents</dt><dd>Claude Code, Codex</dd></div>
-            <div><dt>Domains</dt><dd>single-cell genomics, cancer dependency (DepMap), synthetic lethality, protein–protein interaction networks</dd></div>
-          </dl>
+          <h2 class="section-label">Publications &amp; Manuscripts</h2>
+          <article class="pub">
+            <div class="pub-body">
+              <h3 class="pub-title">From Pairs to Networks: Motif Graph Prompt Tuning for Inductive Protein–Protein Interaction Prediction</h3>
+              <p class="pub-meta">Wang, A., He, X.</p>
+              <p class="pub-desc">Manuscript under review at the International Conference on Learning Representations (ICLR), 2027.</p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-body">
+              <h3 class="pub-title">Proteomics-Informed Prediction of a Tissue-Wide Endogenous Transmembrane Protein Interaction Network</h3>
+              <p class="pub-meta">Yang, L., Dang, T., Luo, H., Tan, Q., Li, A., Lang, X., Yang, X., Shi, S., Liu, X., Wang, A., et al.</p>
+              <p class="pub-desc">Manuscript under review at Nature Biotechnology.</p>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="coursework" class="reveal">
+      <section id="projects">
         <div class="container">
-          <h2 class="section-label">05 / Coursework</h2>
-          <p class="prose">Machine Learning &middot; Deep Learning &middot; AI for Science and Engineering &middot; Bioinformatics</p>
+          <h2 class="section-label">Selected Projects</h2>
+          <article class="pub">
+            <div class="pub-body">
+              <h3 class="pub-title">CS290S: Official-Source RAG for ShanghaiTech/SIST QA</h3>
+              <p class="pub-meta">May 2026 – Jun 2026</p>
+              <p class="pub-desc">Combined BM25 and dense retrieval with reciprocal-rank fusion, source diversity constraints, and reranking. Expected-source hit@5 increased from 0.74 to 0.89 on a controlled benchmark. Integrated a self-hosted Qwen generator with evidence-aware context selection, numbered citations, answer validation, and abstention. Correct answers in manual review increased from 59/100 to 69/100, while abstentions fell from 18/100 to 14/100. Used controlled ablations and failure analysis to evaluate retrieval and generation.</p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-body">
+              <h3 class="pub-title">CS181: Hybrid Logic-DQN Minesweeper Solver</h3>
+              <p class="pub-meta">Apr 2025 – Jun 2025</p>
+              <p class="pub-desc">Combined logical mine constraints, exact enumeration, and probabilistic sampling with a policy that selects guaranteed-safe moves first and uses DQN as a fallback. The solver achieved win rates of 80.90% on 6×6 boards and 74.90% on 9×9 boards in controlled evaluations against constraint programming, probabilistic, pure-DQN, and hybrid strategies.</p>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section id="contact" class="reveal">
+      <section id="experience">
+        <div class="container">
+          <h2 class="section-label">Internship Experience</h2>
+          <article class="pub">
+            <div class="pub-body">
+              <h3 class="pub-title">Huida (Shanghai) Biotechnology Co., Ltd.</h3>
+              <p class="pub-meta">AI Drug Data Retrieval Assistant R&amp;D Intern · Shanghai, China · Jul 2025 – Sep 2025</p>
+              <p class="pub-desc">Built a pipeline to parse, clean, extract, chunk, deduplicate, and normalize heterogeneous animal-study reports. Combined LanceDB vector search, BM25, weighted score fusion, metadata filtering, reranking, and citation constraints for traceable answers. Integrated the pipeline into the bilingual ToxiRAG assistant with a Streamlit interface and command-line ingestion and evaluation tools. Evaluated the system with benchmarks and failure-case tests.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="awards">
+        <div class="container">
+          <h2 class="section-label">Awards &amp; Competitions</h2>
+          <article class="pub">
+            <div class="pub-body">
+              <h3 class="pub-title">Creating a Moon Colony Using a Space Elevator System</h3>
+              <p class="pub-meta">MCM · Honorable Mention · Jan 2026 – Feb 2026</p>
+              <p class="pub-desc">Modeled delivery of 100 million metric tons for a 100,000-person Moon colony. Compared space-elevator, rocket, and hybrid systems with a time-dependent multi-commodity network-flow MILP in Pyomo. Used scenario experiments and 1,000-run Monte Carlo simulations to evaluate schedule, cost, reliability, water supply, and environmental impact.</p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-body">
+              <h3 class="pub-title">NIPT Timing Optimization &amp; Fetal Abnormality Determination</h3>
+              <p class="pub-meta">CUMCM · Second Prize, Shanghai Division · Sep 2025</p>
+              <p class="pub-desc">Used spline mixed-effects models, survival models, and Turnbull estimates to derive BMI testing windows. Compared Elastic-Net logistic regression and XGBoost using chromosome, GC-content, and sequencing-quality features. Evaluated performance with patient-grouped cross-validation, held-out tests, calibration, and Monte Carlo error propagation.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="container">
+          <h2 class="section-label">Skills</h2>
+          <p class="prose">Proficient in using AI agents.</p>
+        </div>
+      </section>
+
+      <section id="contact">
         <div class="container">
           <h2 class="section-label">Contact</h2>
-          <p class="prose">Reach me at <span class="placeholder-link">[arwang@shanghaitech.edu.cn]</span>, or find my code on <a href="https://github.com/ENNCELADUS">GitHub</a>.</p>
+          <p class="prose">Reach me at <a href="mailto:arwang@shanghaitech.edu.cn">arwang@shanghaitech.edu.cn</a>, or find my code on <a href="https://github.com/ENNCELADUS">GitHub</a>.</p>
         </div>
       </section>
     </main>
@@ -303,22 +325,6 @@
           try { localStorage.setItem('theme', next); } catch (e) {}
           sync();
         });
-      })();
-    </script>
-    <script>
-      (function () {
-        var els = document.querySelectorAll('.reveal');
-        if (!('IntersectionObserver' in window) ||
-            matchMedia('(prefers-reduced-motion: reduce)').matches) {
-          els.forEach(function (el) { el.classList.add('visible'); });
-          return;
-        }
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) {
-            if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-          });
-        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-        els.forEach(function (el) { io.observe(el); });
       })();
     </script>
 </body>
